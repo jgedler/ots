@@ -40,11 +40,13 @@ By transcoding fonts in this way, it is ensured that:
 ||LTSH||No||Yes|| ||
 ||GSUB, GDEF||No||No||Some languages such as Arabic or Hindi needs GSUB/GDEF support. Probably we should support them when needs arise.||
 ||GPOS, kern||No||No||These tables are for kerning. We don't support them for now.||
+||morx||No||No|| ||
 ||vhea, vmtx||No||No||These tables are basically for vertical writing. We don't support them since WebKit does not support vertical writing.||
 ||EBDT, EBLC, EBSC, bdat, bhed, bloc||No||No||We don't support embedded bitmap strikes.||
 ||DSIG||No||No|| ||
-||All other tables||-||No||Unsupported tables never appear in transcoded fonts.||
+||All other tables||-||No|| ||
 
+Please note that ots library does not parse "unsupported" tables such as GPOS and GSUB. These unsupported tables never appear in a transcoded font.
 
 ==Supported cmap formats==
 
