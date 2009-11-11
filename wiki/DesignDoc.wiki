@@ -18,7 +18,7 @@ By transcoding fonts in this way, it is ensured that:
 =Supported !OpenType tables=
 
 ||*Name*||*Mandatory table?*||*Supported by ots?*||*Note*||
-||sfnt||Yes||Yes||Overlapped tables are not allowed, it is treated as a fatal parser error.||
+||sfnt||Yes||Yes||Overlapped tables are not allowed; it is treated as a fatal parser error.||
 ||maxp||Yes||Yes|| ||
 ||head||Yes||Yes|| ||
 ||hhea||Yes||Yes|| ||
@@ -27,18 +27,18 @@ By transcoding fonts in this way, it is ensured that:
 ||OS/2||Yes||Yes|| ||
 ||post||Yes||Yes|| ||
 ||cmap||Yes||Yes. Common formats are supported.||see below||
-||glyf||Yes, for !TrueType fonts||Yes.||Hinting are supported.||
+||glyf||Yes, for !TrueType fonts||Yes.||Hinting is supported.||
 ||loca||Yes, when glyf table exists||Yes|| ||
 ||CFF||Yes, for !OpenType fonts||Yes|| ||
 ||cvt||No||Yes||Though this table is not mandatory, ots can't drop the table from a transcoded font since it might be referred from other hinting-related tables. Errors on this table should be treated as fatal.||
 ||fpgm||No||Yes||Ditto.||
 ||prep||No||Yes||Ditto.||
-||VDMX||No||Yes||This table is important to calculate correct line spacing, at least on Chromium Windows and Chromium Linux.||
+||VDMX||No||Yes||This table is important for calculating the correct line spacing, at least on Chromium Windows and Chromium Linux.||
 ||hdmx||No||Yes|| ||
 ||gasp||No||Yes|| ||
 ||VORG||No||Yes|| ||
 ||LTSH||No||Yes|| ||
-||GSUB, GDEF||No||No||Some languages such as Arabic or Hindi needs GSUB/GDEF support. Probably we should support them when needs arise.||
+||GSUB, GDEF||No||No||Some languages such as Arabic or Hindi need GSUB/GDEF support. Probably we should support them whenever necessary.||
 ||GPOS, kern||No||No||These tables are for kerning. We don't support them for now.||
 ||morx||No||No|| ||
 ||vhea, vmtx||No||No||These tables are basically for vertical writing. We don't support them since WebKit does not support vertical writing.||
@@ -68,17 +68,17 @@ The following 8 formats are supported:
  * "Unicode UCS-4" format (platform 0 encoding 4 format 12)
   * treated as 3-10-12 format
 
-All other type of subtables are not supported and do not appear in transcoded fonts.
+All other types of subtables are not supported and do not appear in transcoded fonts.
 
 =Validation strategies=
 
-With regard to 8 mandatory tables, glyph-related tables (glyf, loca and CFF), and hinting-related tables (cvt, prep, and fpgm):
+With regards to 8 mandatory tables, glyph-related tables (glyf, loca and CFF), and hinting-related tables (cvt, prep, and fpgm):
 
  * If ots finds table-length, table-offset, or table-alignment errors, in other words it cannot continue parsing, ots treats the error as fatal.
- * If ots finds simple value error which could be automatically fixed (e.g., font weight is greater than 900 - that's undefined), and if the error is considered common among non-malicious fonts, ots rewrite the value and continues transcoding.
- * If ots finds a value error which is hard to fix (e.g., values which should be sorted is left unsorted), ots treats the error as fatal.
+ * If ots finds simple value error which could be automatically fixed (e.g., font weight is greater than 900 - that's undefined), and if the error is considered common among non-malicious fonts, ots rewrites the value and continues transcoding.
+ * If ots finds a value error which is hard to fix (e.g., values which should be sorted are left unsorted), ots treats the error as fatal.
 
-With regard to optional tables (VORG, gasp, hdmx, LTSH, and VDMX):
+With regards to optional tables (VORG, gasp, hdmx, LTSH, and VDMX):
 
  * If ots finds table-length, table-offset, or table-alignment errors, ots treats the error as fatal.
  * If ots finds other errors, it simply drops the table from a transcoded font.
@@ -108,9 +108,9 @@ With regard to optional tables (VORG, gasp, hdmx, LTSH, and VDMX):
 Please check the IssueTracking page as well.
 
  * ots doesn't handle a symbol font correctly if its cmap table has both 0-0-4 and 3-0-4 subtables.
-  * Please note that such fonts are very rare. Only 4 fonts are found out of 3000+.
- * ots doesn't support non-Unicode fonts, meaning fonts that don't have Unicode CMAP subtables.
-  * This unlikely causes a real problem since recent fonts almost always have Unicode CMAP.
+  * Please note that such fonts are very rare. Only 4 fonts that have both subtables are found out of 3000+.
+ * ots doesn't support non-Unicode fonts, which are fonts that don't have Unicode CMAP subtables.
+  * This will unlikely causes a real problem since recent fonts almost always have Unicode CMAP.
 
 =How to test the library=
 
