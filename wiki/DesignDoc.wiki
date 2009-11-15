@@ -106,12 +106,7 @@ With regards to optional tables (VORG, gasp, hdmx, LTSH, and VDMX):
 
 =Known issues=
 
-Please check the IssueTracking page as well.
-
- * ots doesn't handle a symbol font correctly if its cmap table has both 0-0-4 and 3-0-4 subtables.
-  * Please note that such fonts are very rare. Only 4 fonts that have both subtables are found out of 3000+.
- * ots doesn't support non-Unicode fonts, which are fonts that don't have Unicode CMAP subtables.
-  * This will unlikely causes a real problem since recent fonts almost always have Unicode CMAP.
+Please check the IssueTracking page.
 
 =How to test the library=
 
