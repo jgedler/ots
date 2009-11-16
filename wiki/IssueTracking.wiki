@@ -8,11 +8,9 @@ You might want to read this article before submitting a bug report: http://dev.c
 
 =Known issues=
 
-==Bugs==
-
 http://code.google.com/p/chromium/issues/list?can=2&q=OTS
 
-==Unsupported fonts==
+=Unsupported fonts=
 
 The following ~50 fonts are known to trigger parser errors. ots doesn't produce a  transcoded font for these fonts.
 
