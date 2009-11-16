@@ -14,14 +14,14 @@ http://code.google.com/p/chromium/issues/list?can=2&q=OTS
 
 ==Unsupported fonts==
 
-The following ~40 fonts are known to trigger parser errors. ots doesn't produce a  transcoded font for these fonts.
+The following ~50 fonts are known to trigger parser errors. ots doesn't produce a  transcoded font for these fonts.
 
  * Required table(s) are missing (e.g. OS/2 table).
   * !AppleGothic.ttf, !AppleMyungjo.ttf, ArialHB.ttf, ArialHBBold.ttf, Corsiva.ttf, !CorsivaBold.ttf, !InaiMathi.ttf, NISC18030.ttf, NewPeninimMT.ttf, NewPeninimMTBold.ttf, NewPeninimMTBoldInclined.ttf, NewPeninimMTInclined.ttf, Raanana.ttf, !RaananaBold.ttf
  * The length field of a table is weird.
   * homa.ttf, nazli.ttf, titr.ttf
  * sfnt table(s) are not 4-byte aligned.
-  * !UnBatang.ttf, !UnDotum.ttf
+  * !UnBatang.ttf, !UnDotum.ttf, !UnBom.ttf, !UnGraphic.ttf, !UnGungseo.ttf, !UnJamoBatang.ttf, !UnJamoDotum.ttf, !UnJamoNovel.ttf, !UnJamoSora.ttf, !UnPen.ttf, !UnPenheulim.ttf, !UnPilgi.ttf, !UnShinmun.ttf, !UnTaza.ttf, !UnYetgul.ttf
  * sfnt tables are not sorted by tag.
   * f500.ttf
  * Malformed CMAP table; Subtables are not sorted by platform ID, then by encoding ID.
