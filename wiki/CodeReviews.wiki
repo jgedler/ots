@@ -1,3 +1,16 @@
 #summary Code review in ots project.
 
-to be written.
+For now, we don't use our own code review system. Instead, you can use Chromium project's Rietveld server (http://codereview.chromium.org/). Here is the instruction how to use the server:
+
+ # checkout Chromium source code (http://dev.chromium.org/developers).
+  # install depot_tools.
+  # checkout Chromium code from their SVN server.
+  # run "gclient sync" to pull OTS code into chromium/src/third_party/ots/.
+ # modify OTS code under chromium/src/third_party/ots/.
+  * {{{cd chromium/src/third_party/ots/}}}
+  * {{{emacs src/cmap.cc}}}   # for example
+ # start code review using gcl (http://dev.chromium.org/developers/contributing-code). Please assign an OTS project member (e.g. yusukes@chromium.org) as a reviewer.
+  * {{{cd chromium/src/third_party/ots/}}}
+  * {{{gcl change your_change_name}}}   # you can safely ignore the "WARNING: Creating CL in a read-only checkout" warning.
+  * {{{gcl upload your_change_name}}}
+ # after the code review, the reviewer will land your patch.
