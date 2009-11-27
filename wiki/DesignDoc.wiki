@@ -107,7 +107,3 @@ With regards to optional tables (VORG, gasp, hdmx, LTSH, and VDMX):
 =Known issues=
 
 Please check the IssueTracking page.
-
-=How to test the library=
-
-to be written.
