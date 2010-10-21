@@ -68,7 +68,7 @@ The following 9 formats are supported:
   * ditto
  * "Unicode UCS-4" format (platform 0 encoding 4 format 12)
   * treated as 3-10-12 format
- * Unicode Variation Sequences (platform 0 encoding 5 format 14)
+ * ~~Unicode Variation Sequences (platform 0 encoding 5 format 14)~~
 
 All other types of subtables are not supported and do not appear in transcoded fonts.
 
