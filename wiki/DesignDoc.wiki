@@ -27,9 +27,9 @@ By transcoding fonts in this way, it is ensured that:
 ||OS/2||Yes||Yes|| ||
 ||post||Yes||Yes|| ||
 ||cmap||Yes||Yes. Common formats are supported.||see below||
-||glyf||Yes, for !TrueType fonts||Yes.||Hinting is supported.||
+||glyf||Yes, for !TrueType fonts||Yes.||!TrueType bytecode is supported, but OTS does NOT validate it.||
 ||loca||Yes, when glyf table exists||Yes|| ||
-||CFF||Yes, for !OpenType fonts||Yes|| ||
+||CFF||Yes, for !OpenType fonts||Yes||!OpenType bytecode is also supported, and OTS DOES validate it.||
 ||cvt||No||Yes||Though this table is not mandatory, ots can't drop the table from a transcoded font since it might be referred from other hinting-related tables. Errors on this table should be treated as fatal.||
 ||fpgm||No||Yes||Ditto.||
 ||prep||No||Yes||Ditto.||
@@ -38,8 +38,9 @@ By transcoding fonts in this way, it is ensured that:
 ||gasp||No||Yes|| ||
 ||VORG||No||Yes|| ||
 ||LTSH||No||Yes|| ||
+||kern||No||Yes|| ||
 ||GSUB, GDEF||No||No||Some languages such as Indic/Thai/Arabic need GSUB/GDEF/GPOS support. Probably we should support them whenever necessary.||
-||GPOS, kern||No||No||These tables are for kerning. We don't support them for now.||
+||GPOS||No||No||The table is for kerning. We don't support it for now.||
 ||morx||No||No|| ||
 ||jstf||No||No|| ||
 ||vhea, vmtx||No||No||These tables are basically for vertical writing. We don't support them since WebKit does not support vertical writing.||
