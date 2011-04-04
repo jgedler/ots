@@ -39,11 +39,11 @@ By transcoding fonts in this way, it is ensured that:
 ||VORG||No||Yes|| ||
 ||LTSH||No||Yes|| ||
 ||kern||No||Yes|| ||
-||GSUB, GDEF||No||Yes||Now we support GSUB/GDEF table but haven't shipped to Chromium yet.||
-||GPOS||No||Yes||Now we support GPOS but haven't shipped to Chromium yet.||
+||GSUB, GDEF||No||Yes||||
+||GPOS||No||Yes||||
 ||morx||No||No|| ||
 ||jstf||No||No|| ||
-||vhea, vmtx||No||No||These tables are basically for vertical writing. We don't support them since WebKit does not support vertical writing.||
+||vhea, vmtx||No||Yes||||
 ||EBDT, EBLC, EBSC, bdat, bhed, bloc||No||No||We don't support embedded bitmap strikes.||
 ||DSIG||No||No|| ||
 ||All other tables||-||No|| ||
