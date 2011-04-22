@@ -42,3 +42,30 @@ Then run test_malicious_fonts.sh script in order to verify that:
 ...............................................  (verify that no FAIL: is displayed)
 %
 }}}
+
+= Command line tools =
+
+We have some command line tools for tests. To build them:
+
+- On Linux:
+{{{
+% cd test; scons
+(tools are located at test directory)
+}}}
+
+- On Windows (VC++ is needed):
+{{{
+% gyp --depth=. -f msvs ots-standalone.gyp
+% devenv.exe /build Default ots-standalone.sln /project idempotent.vcproj
+(tool is located at Default directory)
+}}}
+
+- On Mac (XCode is needed):
+{{{
+% gyp --depth=. -f xcode ots-standalone.gyp
+% xcodebuild -configuration Default -project ots-standalone.xcodeproj -target All
+(tool is located at build/Default directory)
+}}}
+
+You can use 'idempotent' tool to check whether a font will be rejected or not. You can also use 'ot-sanitise' tool to get sanitised font (it is available on Linux for now). See README file in the test directory
+for more details.
