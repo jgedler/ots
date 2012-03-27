@@ -23,7 +23,7 @@ By transcoding fonts in this way, it is ensured that:
 ||head||Yes||Yes|| ||
 ||hhea||Yes||Yes|| ||
 ||hmtx||Yes||Yes|| ||
-||name||Yes||Yes||A name table in an original font is always discarded. A dummy name table is inserted to a transcoded font.||
+||name||Yes||Yes|| ||
 ||OS/2||Yes||Yes|| ||
 ||post||Yes||Yes|| ||
 ||cmap||Yes||Yes. Common formats are supported.||see below||
