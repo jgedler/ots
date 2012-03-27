@@ -48,7 +48,7 @@ By transcoding fonts in this way, it is ensured that:
 ||DSIG||No||No|| ||
 ||All other tables||-||No|| ||
 
-Please note that ots library does not parse "unsupported" tables such as GPOS and GSUB. These unsupported tables never appear in a transcoded font.
+Please note that ots library does not parse "unsupported" tables. These unsupported tables never appear in a transcoded font.
 
 ==Supported cmap formats==
 
