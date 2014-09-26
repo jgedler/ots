@@ -84,12 +84,14 @@ bool ots_gasp_should_serialise(OpenTypeFile *file) {
 bool ots_gasp_serialise(OTSStream *out, OpenTypeFile *file) {
   const OpenTypeGASP *gasp = file->gasp;
 
-  if (!out->WriteU16(gasp->version) ||
-      !out->WriteU16(gasp->gasp_ranges.size())) {
+  const uint16_t num_ranges = static_cast<uint16_t>(gasp->gasp_ranges.size());
+  if (num_ranges != gasp->gasp_ranges.size() ||
+      !out->WriteU16(gasp->version) ||
+      !out->WriteU16(num_ranges)) {
     return OTS_FAILURE();
   }
 
-  for (unsigned i = 0; i < gasp->gasp_ranges.size(); ++i) {
+  for (uint16_t i = 0; i < num_ranges; ++i) {
     if (!out->WriteU16(gasp->gasp_ranges[i].first) ||
         !out->WriteU16(gasp->gasp_ranges[i].second)) {
       return OTS_FAILURE();
